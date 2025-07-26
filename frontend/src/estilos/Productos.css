@@ -1,0 +1,171 @@
+  /*estilo del container de los productos*/
+.container-producto{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  margin-top: 50px;
+  position: relative;
+
+}
+
+/*estilo nueva colección*/
+
+.container-producto::before{
+  content: "Nueva Colección";
+  position: absolute;
+  top: -42px;
+  padding: 5px 20px;
+  background-color: #ccc;
+  font-weight: 700;
+}
+
+/*estilo de la imagen*/
+.container-detalle img {
+  width: 100%;
+  height: auto;
+
+}
+
+/*estilo de cada uno de los datalles*/
+.container-detalle{
+  border: 1px solid black;
+  padding: 0px 10px;
+  width: 100%;
+
+}
+
+/*estilo del nombre del producto*/
+.container-detalle h3 {
+  color: black;
+  font-size: 15px;
+  font-weight: 700;
+
+}
+/*estilo del precio del producto*/
+.container-detalle p {
+  color: black;
+  font-weight: 700;
+  margin: 5px 0px;
+
+  font-size: 14px;
+}
+
+/*estilo de las tallas*/
+
+.tallas-container {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.cuadro-talla {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 4px;
+  user-select: none;
+ 
+}
+
+.cuadro-talla:hover{
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+
+}
+
+.cuadro-talla.seleccionada {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+/*estilo del boton del car*/
+.boton-cart{
+  background-color: black;
+  color: white;
+  margin: 8px  0px ;
+  font-size: 12px;
+  padding: 8px 10px;
+  width: 90%;
+  
+
+}
+
+@media screen and (min-width: 768px){
+  .container-producto{
+    width: 85%;
+    margin: 60px auto;
+    grid-gap: 15px;
+  }
+
+  /*estilo del nombre*/
+  .container-detalle h3 {
+    font-size: 1.3rem;
+  }
+
+  /*estilo del precio*/
+  .container-detalle p {
+    font-size: 1.3rem;
+  }
+
+  .tallas-container{
+    font-size: 1.2rem;
+  }
+
+  /*estilo boton*/
+
+  .boton-cart{
+    font-size: 1.1rem;
+    width: 75%;
+    padding: 12px 0px;
+  }
+  
+}
+
+
+@media screen and (min-width: 1024px) {
+  .container-producto{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+   
+  }
+
+
+  /*estilo boton*/
+  .boton-cart{
+    width: 90%;
+  }
+
+  .container-detalle h3{
+  font-size: 16px;
+
+}
+
+.container-detalle img{
+ height: 300px;
+  
+}
+
+ 
+}
+
+
+@media screen  and (min-width: 1280px) {
+
+.container-producto{
+  max-width: 1280px;
+  margin: 60px auto;
+}  
+
+.container-detalle h3{
+  font-size: 16px;
+
+}
+
+.container-detalle img{
+ height: 350px;
+  
+}
+}

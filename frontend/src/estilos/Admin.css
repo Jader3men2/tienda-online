@@ -1,0 +1,51 @@
+.container_admin h1{
+    font-size: 1.5rem;
+    text-align: start;
+    margin: 10px;   
+}
+
+.botones{
+    display: flex;
+    gap: 10px;
+    
+}
+
+.container_nav{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;  
+}
+
+.boton{
+    background-color: white;
+    color: black;
+    border: 1px solid;
+    font-size: 13px;
+}
+
+.boton.opcion {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    outline: none;
+}
+
+
+@media screen and (min-width: 768px) {
+
+.container_nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  
+}
+
+.botones{
+    gap: 15px;
+}
+    
+
+}
+

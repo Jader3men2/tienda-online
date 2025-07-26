@@ -1,0 +1,57 @@
+.container h2{
+    text-align: center;
+    padding: 10px;
+}
+.container_tabla{
+    width: 98%;
+    text-align: center;
+    font-size: 11px;
+    margin: auto;
+
+    border-collapse: collapse;
+}
+
+.container_tabla th, td {
+    border: 1px solid black;
+}
+
+.container_tabla button{
+    width: 60px;
+    background-color: red;
+}
+
+
+@media screen and (min-width: 768px) {
+    .container_tabla{
+        width: 70%;
+        font-size: 1.2rem;
+       
+        
+    }
+
+    .container_tabla th, td{
+        padding: 0px 5px;
+        border: 2px solid black;
+    }
+
+    .container_tabla th {
+        background-color: rgba(175, 175, 175, 0.723);
+       
+    }
+    
+}
+
+@media screen and (min-width:1024px) {
+    .container_tabla select{
+        width: 50%;
+        background-color: rgba(175, 175, 175, 0.723) ;
+    }
+
+    .container_tabla button{ 
+        width: 70%;
+
+    }
+
+    
+}
+

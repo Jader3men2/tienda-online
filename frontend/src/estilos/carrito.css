@@ -1,0 +1,93 @@
+/*estilos de pantalla para celular*/
+
+.container-car{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 5px auto;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    
+}
+
+.container-car img {
+    width: 20%;
+    height: auto;
+    padding: 5px;
+}
+
+.container-car h3 {
+    font-size: 14px;
+}
+
+/* estilo del icono eliminar*/
+.container-car button {
+    width: 10%;
+    background-color: rgba(255, 255, 255, 0.075);
+    color: black;
+    margin: 0 5px;
+    
+}
+
+/* estilo del icono eliminar al pasar el mau*/
+.container-car button :hover {
+    color: red;
+
+}
+
+.container-car p {
+    font-weight: 600;
+}
+
+.total-car{
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    background-color: #ccc;
+    padding: 8px;
+}
+
+.boton-vaciar{
+    display: flex;
+    justify-content: center;
+    margin: 8px auto;
+    background-color: red;
+}
+
+/*  estilos de pantalla para table*/
+@media screen and (min-width: 768px) {
+    .container-car{
+        width: 90%;
+        gap: 10px
+    
+    }
+
+    .container-car button {
+        width: 5%;
+    }
+    
+    .container-car p {
+        font-size: 1.3rem;
+      
+        
+    }
+
+    .container-car h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/*estilos para el monitor*/
+
+@media screen and (min-width: 1024px) {
+    .container-car{
+        max-width: 700px;
+    }
+
+    .titulo-carrito{
+        padding-left: 10%;
+    }
+}

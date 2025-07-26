@@ -1,0 +1,128 @@
+
+  
+.login-container {
+    background-image:  url(public/laaaa.png);
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+    background-position: left;
+    background-color:  white;
+    width: 50%;
+    height: 475px;
+    min-width: 265px;
+    border: 3px solid black;
+    border-radius: 3%;
+    margin: 20px auto;
+    
+   
+  }
+
+  .titulo1 {
+   text-align: center;
+   margin-top: 10px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+
+  .login-form label {
+    margin-left:  29px;
+    margin-top: 35px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 5px;
+  }
+  
+  .login-form input, select {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+  }
+
+  
+  .login-form button {
+    width: 60%;
+    margin: auto;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 25px;
+    
+    
+  }
+  
+  .login-form button:hover {
+    background-color: #555;
+  }
+
+  .titulo-regis{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: blue;
+    font-size: 16px;
+    text-decoration: underline;
+  }
+
+  .titulo-regis:hover {
+    color: red;
+  }
+
+
+/*estilo para tablet*/
+  @media screen and (min-width: 768px){
+    .login-container {
+        width: 40%;
+    }
+
+  }
+
+/*estilos para computador */
+
+@media screen and (min-width: 1024px) {
+
+    .login-container{
+        max-width: 600px;
+
+        width: 60%;
+    }
+
+    .login-form{
+        width: 50%;
+        margin-left: auto;
+        
+        
+        
+    }
+
+   .titulo1{
+    width:92%;
+    margin-top:8px;
+    display: flex;
+    justify-content: right;
+   
+   
+    }
+
+    .titulo-regis{
+      width:83%;
+      margin-top:10px;
+      display: flex;
+      justify-content: right;
+      font-size: 1.3rem;
+
+    }
+
+    
+}

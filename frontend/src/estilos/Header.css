@@ -1,0 +1,243 @@
+header {
+    background-color: white;
+    color: black;
+    width: 100%;
+  
+
+    
+  }
+
+
+  /*estilos del splender*/
+
+  .splender{
+    background-color: rgb(132, 132, 132);
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+
+  }
+
+  .nombre {
+    font-size: 1rem;
+    font-weight: bold;
+    animation: moverLadoALado 3s ease-in-out infinite;
+  }
+  
+  @keyframes moverLadoALado {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(40%);
+    }
+    50% {
+      transform: translateX(3%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+  .logo-nav{
+   border: 1px solid black;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 20px;
+   padding: 0px 3px;
+  
+  }
+  
+
+  .logo{
+    width: 60px;
+   
+  }
+
+  /* estilo del input de buscar*/
+  .input-container {
+    display: flex;
+    align-items: center;
+    }
+
+
+
+  .input-container input{
+    width: 90px;
+    margin-left: 2px;
+    border: 2px solid black;
+    padding: 4px;
+    border-radius: 16px;
+
+  }
+
+
+  /*estilo de la borbuja del icono del cart*/
+  .carrito-icono {
+    position: relative;
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .carrito-contador {
+    position: absolute;
+    top: -8px;
+    right: -1px;
+    background: black;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+  }
+  
+
+
+
+
+  
+  /* Estilos base para el nav */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  /* Enlaces del menú */
+  nav a {
+    color: #c01a1a;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+ 
+  
+ 
+  /* Estilos responsivos  */
+  
+  @media (min-width: 768px) {
+
+    .nombre {
+      font-size: 1rem;
+      font-weight: bold;
+      animation: moverLadoALado 5s ease-in-out infinite;
+    }
+    
+    @keyframes moverLadoALado {
+      0% {
+        transform: translateX(70%);
+      }
+      25% {
+        transform: translateX(70%);
+      }
+      50% {
+        transform: translateX(3%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    .logo-nav {
+      justify-content: space-between;
+     
+     
+    }
+  
+    nav a {
+      font-size: 1.5rem;  
+    }
+
+    .input-container input{
+      width: 100%;
+    }
+
+    .logo {
+    
+      display: flex;
+      flex: 1;
+    
+
+    }
+  }
+
+
+  @media screen and (min-width:1024px) {
+    
+    header{
+      
+      margin: auto;
+      height: 175px;
+      
+      
+    }
+
+    
+    @keyframes moverLadoALado {
+      0% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(80%);
+      }
+      50% {
+        transform: translateX(50%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+ 
+
+    .logo{
+      width: 90px;
+      position:absolute;
+      margin: 0 auto;
+      top: 0px;
+      left:45%
+      
+
+      
+    }
+
+    .input-container{
+      margin-left:50%
+    }
+
+   
+
+   
+
+    .logo-nav{
+      border: none;
+      position:relative;
+      height:100px
+      
+    }
+
+    .icono_login{
+      position: absolute;
+      left:20px
+    }
+    
+  }
+
+  @media screen and (min-width: 1280px ){
+
+  header{
+    max-width: 1300px;
+   
+   
+  }
+
+
+
+ .logo{
+  width:100px;
+
+ }
+
+  }
+  

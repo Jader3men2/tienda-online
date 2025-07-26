@@ -1,0 +1,186 @@
+.container-fotos{
+  background-color: black;
+  position: relative; 
+
+}
+
+
+
+.foto-ropa, .foto-ropa1{
+    transition: transform 0.3s ease;
+    
+  }
+  
+  .foto-ropa:hover {
+    transform: scale(1.05);
+  }
+  
+
+  .foto-ropa{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 10px;
+
+    
+  }
+
+  .foto-ropa1{
+    display: none;
+  }
+
+  /*primera palabra*/
+  .maquina-escribir {
+    width: 20ch; /* Número de caracteres visibles */
+    white-space: nowrap;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    overflow: hidden;
+    border-right: 2px solid black;
+    color: black;
+    background-color: antiquewhite;
+    font-size: 1rem;
+    animation: escribir 4s steps(22) 1s infinite alternate,
+               blink 0.9s step-end infinite;
+  }
+  
+  @keyframes escribir {
+    from {
+      width: 0;
+    }
+    to {
+      width: 20ch;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  /*segunda palabra*/
+
+  .maquina-escribir2 {
+    width: 25ch; /* Número de caracteres visibles */
+    white-space: nowrap;
+    position: absolute;
+    top: 75%;
+    left: 25%;
+    overflow: hidden;
+    border-right: 2px solid black;
+    color: black;
+    background-color: antiquewhite;
+    font-size: 1rem;
+    animation: escribir 4s steps(25) 1s infinite alternate,
+               blink 0.9s step-end infinite;
+  }
+  
+  @keyframes escribir {
+    from {
+      width: 0;
+    }
+    to {
+      width: 25ch;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+
+    .container-fotos{
+      display: flex;
+      
+    }
+
+    .foto-ropa{
+      width: 50%;
+      height: 400px;
+    }
+
+    .maquina-escribir{
+      top:50%;
+      left: 9%;
+      font-size: 1.2rem;
+    }
+  
+    .maquina-escribir2{
+      top: 50%;
+      left: 59%;
+      font-size: 1.2rem;
+    }
+  }
+
+  
+
+  @media screen and (min-width: 1024px) {
+
+    .container-fotos{
+      width: 100%;
+      padding: 5px;
+    }
+    .foto-ropa1, .foto-ropa{
+      display: flex;
+      width: 33%;
+      height: 450px;
+      
+    }
+
+    .foto-ropa1:hover {
+      transform: scale(1.05);
+    }
+
+    /*estilo de las palabras*/
+    .maquina-escribir{
+      top:50%;
+      left: 1%;
+      font-size: 1.4rem;
+      
+    }
+
+    
+  
+    .maquina-escribir2{
+      top: 50%;
+      left: 68%;
+      font-size: 1.4rem;
+    }
+
+  }
+
+  @media screen and (min-width: 1280px) {
+    .container-fotos{
+      height: 530px;
+    }
+
+
+    .foto-ropa, .foto-ropa1{
+      width: 33%;
+      height: 500px;
+      
+     
+    }
+
+    .foto-ropa1{
+      padding-top: 20px;
+    }
+
+    .maquina-escribir{
+      left: 6%;
+    }
+
+    .maquina-escribir2{
+      left: 71%;
+    }
+    
+  }
+  
+
+  

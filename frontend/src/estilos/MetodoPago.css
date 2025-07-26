@@ -1,0 +1,138 @@
+
+
+.container-pago{
+    text-align: center;
+    border-bottom: 1px solid black;
+    height: 100px;
+}
+
+.container-pago h2{
+    text-align: start;
+}
+
+
+.container_producto{
+    width: 95%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 5px auto;
+    text-align: center;
+    border-radius: 10px;
+    
+}
+
+.metodo_pago img{
+     width: 20%;
+    padding: 5px;
+
+}
+
+.metodo_pago h3{
+     font-size: 16px;
+}
+
+.container1{
+    width: 100%;
+    overflow-y: auto;
+    height: 350px;
+}
+
+.container_resumen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    background-color: #ccc;
+    padding: 8px;
+
+}
+
+.container_resumen .subTotal, .con-descuento, .total-final{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    border: 1px solid black;
+    padding: 15px;
+
+
+}
+
+.subTotal{
+    color: rgba(0, 0, 0, 0.623);
+}
+
+.con-descuento{
+    color: red;
+}
+
+.container_resumen h2{
+    padding: 7px;
+}
+.titulo3{
+    margin: 0 5px;
+}
+
+@media screen and (min-width: 768px){
+
+    .container-pago{
+        width: 90%;
+        margin: auto;
+    }
+
+    .container2{
+        height: 400px;
+    }
+    .container_producto{
+        width: 95%;
+        gap: 10px;
+        margin: 15px auto;
+    }
+
+    .buton{
+        width: 5%;
+    }
+
+    .container_producto h3, span{
+        font-size: 1.1rem;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    .contenido-padre{
+        width: 80%;
+        margin: auto;
+        display: flex;
+    }
+
+    .container-pago{
+        flex: calc(60%);
+        margin: 10% auto;
+        height: 100px;
+        padding: 10px;
+       
+       
+       
+       
+    }
+    .container_resumen{
+        width: 80%;
+        margin: auto;
+    }
+
+    .container_producto h3, span{
+        font-size: 1.1rem;
+    }
+
+    .buton{
+        width: 30px;
+    }
+
+
+    
+}
+

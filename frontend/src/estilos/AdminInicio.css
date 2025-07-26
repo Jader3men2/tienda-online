@@ -1,0 +1,79 @@
+.container_padre{
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+.container_padre h2{
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.container_padre input{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 11px;
+    padding: 11px;
+    margin: 10px auto;
+}
+
+.imagen_preview img {
+    display: flex;
+    margin: 10px auto;
+    width: 30%;
+}
+
+
+.imagen_guardadas img{
+    display: flex;
+    flex-direction: column;
+    margin: 5px auto;
+    column-gap: 5px;
+    width: 35%;
+
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+     background-color: gainsboro;
+    color: black;
+    border: 1px solid black;
+}
+
+button:hover{
+    background-color: green;
+    color: white;
+}
+
+.imagen_guardadas button:hover {
+     background-color: red;
+    color: white;
+
+}
+
+
+@media screen and (min-width: 1024px) {
+  
+
+    .container_padre h3{
+        font-size: 1.5rem;
+        padding: 15px;
+        text-align: center;
+    }
+    .imagen_guardadas{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .imagen_guardadas img{
+    
+        width: 300px;
+        gap: 15px;
+    }
+    
+}

@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "nombre": "Camisetas tipo polo verde marino",
+        "precio": 29.990,
+        "img": "./public/producto1.png",
+        "quanty":1,
+        "tallas": ["S", "M", "L", "XL"]
+    },
+    {
+        "id": 2,
+        "nombre": "Camisetas tipo polo negra",
+        "precio": 59.990,
+        "img": "./public/producto2.png",
+        "quanty":1,
+        "tallas": ["S", "M", "L", "XL"]
+    },
+    {
+        "id": 3,
+        "nombre": "Camisetas tipo polo vinotinto",
+        "precio": 49.990,
+        "img": "./public/producto3.png",
+        "quanty":1,
+        "tallas": ["S", "M", "L", "XL"]
+    },
+    {
+        "id": 4,
+        "nombre": "Camisetas tipo polo azul",
+        "precio": 39.990,
+        "img": "./public/producto4.png",
+        "quanty":1,
+        "tallas": ["S", "M", "L", "XL"]
+    }
+    
+]

@@ -1,0 +1,64 @@
+.columna1{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 11px;
+    margin: auto;
+   
+}
+
+.columna1 label{
+    width: 50%;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.input1{
+    width: 230px;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 11px;
+    margin-bottom: 5px;
+    margin: 5px auto;
+}
+
+.btn_ir_envio{
+    background-color: black;
+    color: white;
+}
+
+.btn_ir_envio:hover{
+    background-color: green;
+}
+
+
+@media screen and (min-width: 768px) {
+    .contenido{
+        width: 70%;
+        margin: 10px auto;
+    }
+    .columna1{
+        width: 350px;
+    }
+    
+}
+
+@media screen and (min-width: 1024px){
+    .columna1{
+        width: 400px;
+    }
+
+    .columna1 label{
+        width: 170px;
+        text-align: left;
+        padding: 0px 50px;
+        
+    }
+
+    .input1{
+        width: 300px;
+    }
+    
+}

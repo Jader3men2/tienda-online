@@ -1,0 +1,127 @@
+.container_producto{
+     width: 95%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 5px auto;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+.resumen_compra img{
+    width: 20%;
+    padding: 5px;
+
+}
+
+.resumen_compra h3{
+     font-size: 16px;
+}
+
+
+.buton{
+    width: 10%;
+    margin: 0 5px;
+}
+
+.buton:hover{
+    background-color: red ;
+}
+
+.container_reco{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    background-color: #ccc;
+    padding: 8px;
+
+}
+
+.container_reco .subTotal, .con-descuento, .total-final{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    border: 1px solid black;
+    padding: 15px;
+
+
+}
+
+.subTotal{
+    color: rgba(0, 0, 0, 0.623);
+}
+
+.con-descuento{
+    color: red;
+}
+
+.container_reco h2{
+    padding: 7px;
+}
+.titulo3{
+    margin: 0 5px;
+}
+
+.boton_info{
+    background-color: black;
+    color: white;
+    margin: 10px auto;
+}
+
+@media screen and (min-width: 768px) {
+    .container2{
+        overflow-y: auto;
+
+    }
+    .container_producto{
+        width: 90%;
+    }
+
+    .buton{
+        width: 5%;
+    }
+
+    .container_producto h3, span{
+        font-size: 1.3rem;
+    }
+    
+}
+
+
+@media screen and (min-width: 1024px) {
+
+     .resumen_compra{
+        width: 80%;
+        margin: auto;
+    }
+
+    .container-hijo{
+       display: flex;
+    }
+    
+    
+    .container2{
+        flex: calc(65%);
+        overflow-y: auto;
+        height: 400px;
+    }
+    
+    .container_reco{
+        flex: calc(35% - 1rem);
+        margin: auto 5px;
+        border: 1px solid black;
+      
+    }
+
+    .container_producto{
+       flex: calc(60% - 1rem);
+      
+    }
+
+    
+}
