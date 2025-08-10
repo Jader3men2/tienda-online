@@ -4,6 +4,7 @@ import AdminProductos from "../components/AdminProducto";
 import AdminInicio from "../components/AdminInicio";
 import AdminMostrar from "../components/AdminMostrar";
 import AdminFrases from "../components/AdminFrases";
+import AdminPedidos from "../components/AdminPedidos";
 
 const Admin = () => {
   const [opcion, setOpcion] = useState("opcion0");
@@ -43,6 +44,12 @@ const Admin = () => {
           >
             Gestionar frases
           </button>
+          <button
+            className={`boton ${opcion === "opcion5" ? "opcion" : ""}`}
+            onClick={() => mostrarContenido("opcion5")}
+          >
+            Gestionar Pedidios
+          </button>
         </div>
       </nav>
 
@@ -51,6 +58,7 @@ const Admin = () => {
         {opcion === "opcion2" && <AdminInicio />}
         {opcion === "opcion3" && <AdminMostrar />}
         {opcion === "opcion4" && <AdminFrases />}
+        {opcion === "opcion5" && <AdminPedidos />}
       </main>
     </div>
   );

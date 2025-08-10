@@ -6,6 +6,7 @@ const connectDB = require("./database/database");
 const productosRoutes = require("./routes/productosRoutes");
 const inicioFotosRouter = require("./routes/inicioFotosRoutes");
 const frasesOfertasRoutes = require("./routes/frasesOfertasRoutes");
+const pedidoRoutes = require("./routes/pedidoRoutes");
 const app = express();
 const path = require("path");
 const port = 3000;
@@ -36,6 +37,9 @@ app.use("/api/inicio", inicioFotosRouter);
 
 //rupa frases
 app.use("/api", frasesOfertasRoutes);
+
+//rupa pedidos
+app.use("/api/pedidos", pedidoRoutes);
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);

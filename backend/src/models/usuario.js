@@ -4,8 +4,8 @@ const bcrypt = require("bcrypt"); // libreria para encriptar contraseñas de for
 const UsuarioSchema = new mongoose.Schema({
   //define como deber ser el documento de usuario eb la base de dato.
   nombre: { type: String, required: true }, // campo obligatorio para el nombre de usuario.
-  email: { type: String, require: true, unique: true },
-  usuario: { type: String, require: true, unique: true },
+  email: { type: String, required: true, unique: true },
+  usuario: { type: String, required: true, unique: true },
   contrasenaHash: { type: String, required: true },
   rol: { type: String, enum: ["usuario", "administrador"], default: "usuario" },
   fechaRegistro: { type: Date, default: Date.now },

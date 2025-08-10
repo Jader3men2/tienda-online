@@ -19,29 +19,43 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  const decreaseQuantity = (id) => {
+  const decreaseQuantity = (id, talla) => {
     setCart(
       (prevCart) =>
         prevCart
           .map((item) =>
-            item.id === id ? { ...item, quanty: item.quanty - 1 } : item
+            item._id === id && item.talla === talla
+              ? { ...item, quanty: item.quanty - 1 }
+              : item
           )
           .filter((item) => item.quanty > 0) // Elimina si llega a 0
     );
   };
 
+  //eliminar por id
+  const removeItem = (id) => {
+    setCart((prevCart) => prevCart.filter((item) => item._id !== id));
+  };
+
   // vaciar todo el carritos
-  const ClearCart = () => setCart([]);
+  const clearCart = () => {
+    setCart([]);
+    localStorage.removeItem("cart");
+  };
 
   // Función para agregar productos al carrito
   const addToCart = (product) => {
     setCart((prevCart) => {
-      // Verifica si el producto ya está en el carrito
-      const existingProduct = prevCart.find((item) => item.id === product.id);
+      // Verifica si el producto ya está en el carrito con la misma talla
+      const existingProduct = prevCart.find(
+        (item) => item._id === product._id && item.talla === product.talla
+      );
       if (existingProduct) {
         // Si el producto ya está, solo incrementa la cantidad
         return prevCart.map((item) =>
-          item.id === product.id ? { ...item, quanty: item.quanty + 1 } : item
+          item._id === product._id && item.talla === product.talla
+            ? { ...item, quanty: item.quanty + 1 }
+            : item
         );
       } else {
         // Si el producto no está, lo agrega al carrito
@@ -55,8 +69,9 @@ export const CartProvider = ({ children }) => {
       value={{
         cart,
         addToCart,
-        ClearCart,
+        clearCart,
         decreaseQuantity,
+        removeItem,
       }}
     >
       {children}

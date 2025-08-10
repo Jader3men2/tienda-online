@@ -111,9 +111,7 @@ const AdminMostrar = () => {
                 <td>{producto.nombre}</td>
                 <td>{producto.categoria}</td>
                 <td>{Number(producto.precio).toLocaleString("es-CO")}</td>
-                <td>
-                  {producto.tallas ? producto.tallas.toUpperCase() : "N/A"}
-                </td>
+                <td>{producto.tallas}</td>
 
                 <td>
                   <button onClick={() => eliminarProducto(producto._id)}>

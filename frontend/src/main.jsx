@@ -6,14 +6,16 @@ import { CartProvider } from "./context/CartContext";
 import App from "./App";
 import "./index.css";
 import { ImagenesProvider } from "./context/ImagenesProvider";
-
+import { PedidoProvider } from "./context/usePedido";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ImagenesProvider>
       <CartProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <PedidoProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </PedidoProvider>
       </CartProvider>
     </ImagenesProvider>
   </StrictMode>

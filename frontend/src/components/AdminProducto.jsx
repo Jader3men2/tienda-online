@@ -6,7 +6,7 @@ const AdminProductos = () => {
   const [nombre, setNombre] = useState("");
   const [categoria, setCategoria] = useState("");
   const [precio, setPrecio] = useState("");
-  const [tallas, setTallas] = useState("");
+  const [tallasInput, setTallasInput] = useState("");
   const [image, setImagen] = useState(null);
 
   const manejarEnvio = async (e) => {
@@ -16,7 +16,18 @@ const AdminProductos = () => {
     formData.append("nombre", nombre);
     formData.append("categoria", categoria);
     formData.append("precio", precio);
-    formData.append("tallas", tallas);
+
+    const tallasArray = tallasInput
+      .replace(/\s*y\s*/g, ",")
+      .split(",")
+      .map((talla) => talla.trim())
+      .filter((talla) => talla.length > 0);
+
+    // iterar sobre el array y añadir cada talla al formData
+    tallasArray.forEach((talla) => {
+      formData.append("tallas[]", talla);
+    });
+
     formData.append("imagen", image);
 
     try {
@@ -25,8 +36,13 @@ const AdminProductos = () => {
         body: formData,
       });
 
+      //verificar si la respuesta es correcta
+      if (!res.ok) {
+        throw new Error(`Error en el servidor: ${res.status}`);
+      }
+
       await res.json();
-      alert("Producto subido con éxito."); // borrar data despues
+      alert("Producto subido con éxito.");
     } catch (err) {
       console.error("Error al subir producto", err);
     }
@@ -57,8 +73,9 @@ const AdminProductos = () => {
       />
       <input
         type="text"
-        placeholder="Tallas: S M L"
-        onChange={(e) => setTallas(e.target.value)}
+        placeholder="Tallas: S, M, L o S y L"
+        value={tallasInput}
+        onChange={(e) => setTallasInput(e.target.value)}
         required
       />
       <input

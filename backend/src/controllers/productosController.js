@@ -8,11 +8,15 @@ exports.crearProducto = async (req, res) => {
     const { nombre, categoria, precio, tallas, descripcion } = req.body;
     const imagenUrl = req.file ? `/uploads/${req.file.filename}` : "";
 
+    let tallasFormatiadas = tallas;
+    if (typeof tallas === "string") {
+      tallasFormatiadas = tallas.split(",").map((talla) => talla.trim());
+    }
     const nuevoProducto = new Producto({
       nombre,
       categoria,
       precio,
-      tallas,
+      tallas: tallasFormatiadas,
       descripcion,
       imagenUrl,
     });

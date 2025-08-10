@@ -37,7 +37,17 @@ exports.registrarUsuario = async (req, res) => {
       { expiresIn: "1h" }
     );
 
-    res.status(201).json({ mensaje: "Usuario registrado con éxito.", token });
+    res.status(201).json({
+      mensaje: "Usuario registrado con éxito.",
+      token,
+      usuario: {
+        _id: nuevoUsuario._id,
+        nombre: nuevoUsuario.nombre,
+        email: nuevoUsuario.email,
+        usuario: nuevoUsuario.usuario,
+        rol: nuevoUsuario.rol,
+      },
+    });
   } catch (error) {
     console.error("Error al registrar usuario:", error);
     res.status(500).json({ mensaje: "Error al registrar usuario." });
@@ -61,14 +71,16 @@ exports.loginUsuario = async (req, res) => {
     res.status(200).json({
       mensaje: "Inicio de sesión exitoso",
       token,
-      rol: user.rol,
-      usuario: user.usuario,
+      usuario: {
+        _id: user._id,
+        usuario: user.usuario,
+        rol: user.rol,
+        email: user.email,
+      },
     });
-
-    res.json({ mensaje: "Inicio de sesión exitoso.", token });
   } catch (error) {
     console.error("Error al iniciar sesión:", error);
-    res.status(500).json({ mensaje: "Error al iniciar sesión." });
+    return res.status(500).json({ mensaje: "Error al iniciar sesión." });
   }
 };
 

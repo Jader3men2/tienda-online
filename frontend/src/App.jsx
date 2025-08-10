@@ -17,6 +17,7 @@ import AdminInicio from "./components/AdminInicio";
 import AdminProductos from "./components/AdminProducto";
 import AdminMostrar from "./components/AdminMostrar";
 import AdminFrases from "./components/AdminFrases";
+import AdminPedidos from "./components/AdminPedidos";
 import ResumenCompra from "./components/ResumenCompra";
 import AgregarInformacion from "./components/AgregarInformacion";
 import MetodoEnvio from "./components/MetodoEnvio";
@@ -40,6 +41,7 @@ function App() {
           <Route path="/admin/inicio" element={<AdminInicio />} />
           <Route path="/admin/mostrar" element={<AdminMostrar />} />
           <Route path="/admin/frases" element={<AdminFrases />} />
+          <Route path="/admin/pedido" element={<AdminPedidos />} />
           <Route path="/Checkout" element={<Checkout />} />
           <Route path="/Checkout/resumen" element={<ResumenCompra />} />
           <Route

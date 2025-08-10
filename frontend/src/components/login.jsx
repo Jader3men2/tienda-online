@@ -16,27 +16,33 @@ function Login() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ usuario, contrasena: password }), // usa 'contrasena' si así se llama en el backend
       });
-      console.log(rol, usuario, password);
+      console.log(usuario, password); // borrar
 
       const data = await res.json();
+      console.log(data, "data");
 
-      if (res.ok) {
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("rol", data.rol);
-        localStorage.setItem("usuario", data.usuario);
+      if (!res.ok) {
+        throw new Error(data.mensaje || "Error de las credenciales");
+      }
 
-        alert("Login exitoso");
-        console.log("Redirigiendo a:", data.rol); // eliminar
+      const rol = data.usuario.rol;
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("rol", rol);
+      localStorage.setItem("usuario", JSON.stringify(data.usuario));
+      console.log(rol, "data.rol");
 
-        if (data.rol === "administrador") {
-          navigate("/admin");
-        } else {
-          navigate("/App");
-        }
+      alert("Login exitoso");
+
+      if (rol === "administrador") {
+        navigate("/admin");
+      } else if (rol === "usuario") {
+        navigate("/");
+      } else {
+        alert("Rol no  reconocido");
       }
     } catch (error) {
       console.error("Error al enviar login:", error);
-      alert("Error de servidor");
+      alert(error.message || "Error de servidor");
     }
   };
 
@@ -62,6 +68,9 @@ function Login() {
 
         <label htmlFor="cambio-de-rol">Cambio de rol</label>
         <select value={rol} onChange={(e) => setRol(e.target.value)}>
+          <option value="" disabled>
+            Selecciona un rol
+          </option>
           <option value="usuario">Usuario</option>
           <option value="administrador">Administrador</option>
         </select>
