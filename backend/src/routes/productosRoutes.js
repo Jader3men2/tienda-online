@@ -21,7 +21,8 @@ const upload = multer({ storage });
 
 router.post("/", upload.single("imagen"), TodosProductos.crearProducto);
 router.get("/", TodosProductos.mostrarProductos);
-router.get("/categoria/:categoria", TodosProductos.mostrarPorCategoria);
+router.get("/:id", TodosProductos.mostrarPorId);
+router.get("/categoria/:categoria", TodosProductos.obtenerPorCategoria);
 router.put("/:id", upload.single("imagen"), TodosProductos.actualizarProductos);
 router.delete("/:id", TodosProductos.eliminarProducto);
 

@@ -3,6 +3,7 @@ import "../estilos/Productos.css";
 import React, { useState, useEffect } from "react";
 import { useCart } from "../context/CartContext"; // Importa el hook del contexto
 import TallasSelector from "../components/TallasSelector";
+import { Link } from "react-router-dom";
 
 const Productos = () => {
   const [productos, setProductos] = useState([]);
@@ -50,10 +51,12 @@ const Productos = () => {
     <div className="container-producto">
       {productos.map((producto) => (
         <div key={producto._id} className="container-detalle">
-          <img
-            src={`http://localhost:3000${producto.imagenUrl}`}
-            alt={producto.nombre}
-          />
+          <Link to={`/producto/${producto._id}`}>
+            <img
+              src={`http://localhost:3000${producto.imagenUrl}`}
+              alt="imagen producto"
+            />
+          </Link>
           <h3>{producto.nombre}</h3>
           <p>${producto.precio}</p>
 

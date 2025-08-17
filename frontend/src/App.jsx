@@ -22,6 +22,7 @@ import ResumenCompra from "./components/ResumenCompra";
 import AgregarInformacion from "./components/AgregarInformacion";
 import MetodoEnvio from "./components/MetodoEnvio";
 import MetodoPago from "./components/MetodoPago";
+import Categoria from "./pages/Categoria";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/productos" element={<Productos />} />
           <Route path="/producto/:id" element={<ProductoDetalle />} />
+          <Route path="/categorias" element={<Categoria />} />
           <Route path="/EnlacesFotos" element={<EnlacesFotos />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/admin" element={<Admin />} />

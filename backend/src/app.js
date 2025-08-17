@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const usuarioRoutes = require("./routes/usuarioRoutes");
 const connectDB = require("./database/database");
+const categoriasRoutes = require("./routes/categoriasRoutes");
 const productosRoutes = require("./routes/productosRoutes");
 const inicioFotosRouter = require("./routes/inicioFotosRoutes");
 const frasesOfertasRoutes = require("./routes/frasesOfertasRoutes");
@@ -32,6 +33,8 @@ app.use("/api/usuarios", usuarioRoutes);
 app.use("/uploads", express.static(path.join(__dirname, "..", "uploads")));
 
 app.use("/api/productos", productosRoutes);
+
+app.use("/api/categorias", categoriasRoutes);
 
 app.use("/api/inicio", inicioFotosRouter);
 

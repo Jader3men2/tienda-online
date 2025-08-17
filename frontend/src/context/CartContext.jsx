@@ -3,7 +3,7 @@ import React from "react";
 import { createContext, useState, useContext, useEffect } from "react";
 
 // Crea el contexto
-const CartContext = createContext();
+export const CartContext = createContext();
 
 export const useCart = () => {
   return useContext(CartContext);

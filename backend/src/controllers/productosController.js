@@ -40,13 +40,50 @@ exports.mostrarProductos = async (req, res) => {
   }
 };
 
-// mostrar productos por categoria
-exports.mostrarPorCategoria = async (req, res) => {
+//mostrar productos por id
+exports.mostrarPorId = async (req, res) => {
   try {
-    const productos = await Producto.find({ categoria: req.params.categoria });
+    const producto = await Producto.findById(req.params.id);
+
+    if (!producto) {
+      return res.status(400).json({ mensaje: "Producto no encontrado" });
+    }
+
+    res.json(producto);
+  } catch (error) {
+    res.status(500).json({ mensaje: "Error al mostrar productos" });
+  }
+};
+
+// mostrar productos por categoria
+exports.obtenerCategorias = async (req, res) => {
+  try {
+    const categorias = await Producto.distinct("categoria");
+    console.log(categorias, "jjj");
+    res.status(200).json(categorias);
+  } catch (error) {
+    console.error("Error en distinct", error);
+    res.status(500).json({ mensaje: "Error al mostrar productos", error });
+  }
+};
+
+//obtener productos por categoria
+
+exports.obtenerPorCategoria = async (req, res) => {
+  try {
+    const categoria = req.params.categoria;
+    const productos = await Producto.find({ categoria });
+
+    if (productos.length === 0) {
+      return res
+        .status(400)
+        .json({ mensaje: "No hay productos en esta categoría" });
+    }
+
     res.json(productos);
   } catch (error) {
-    res.error(500).json({ mensaje: "Erro al mostrar productos" });
+    console.error("Error obteniendo productos por categoría", error);
+    res.status(500), json({ mensaje: "Error en el servidor" });
   }
 };
 
